@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>TODO App</title>
+ <link href="bootstrap.css" type="text/css" rel="stylesheet"/>
+ <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+ <script src="Todo.js"></script>
+</head>
+<body onload="getTodos()">
+
+ <!-- Add TODO -->
+  <h2 style="text-align:center;padding-bottom:20px;">TODO APP</h2>
+  <form class="form-horizontal" role="form">
+   <div class="form-group">
+    <label  class="col-sm-2 control-label" for="lg">Task Name:</label>
+    <div class="col-sm-4">
+     <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+    </div>
+   </div>
+   <div class="form-group">
+    <label  class="col-sm-2 control-label" for="lg">Description:</label>
+    <div class="col-sm-4">
+     <textarea rows="3" cols="20" class="form-control" id="description" name="description" placeholder="Description" ></textarea>
+    </div>
+   </div>
+   <div class="form-group">
+    <label  class="col-sm-2 control-label" for="lg">DueDate:</label>
+    <div class="col-sm-4">
+     <input type="date" class="form-control" id="dueDate" name="dueDate" placeholder="dd/mm/yyyy">
+    </div>
+   </div>
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <button class="btn btn-primary" type="button" onclick="addTodos()">Add</button>
+    </div>
+   </div>
+  </form>
+  
+ <!-- List TODO's --> 
+ <div style="padding-left:5%;">
+  <h4 style="text-align:center">TODO List</h4>
+  <table class="table" id="TodoList" style="width:90%;">
+   <tr>
+    <th>TODO</th>
+   </tr>
+  </table>
+ </div>
+</body>
+</html>
