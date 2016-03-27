@@ -15,7 +15,7 @@ function getTodos(){
 			})
 		},
 		error : function(jqXHR) {
-			alert("Status:" + jqXHR.status + "\n" +jqXHR.statusText);
+			alert("Status:" + jqXHR.status + "\n" +"Message: " + jqXHR.statusText);
 		}
 	});
 }
@@ -61,7 +61,7 @@ function deleteTodo(id){
 			$("#todo-"+id).remove();
 		},
 		error : function(jqXHR){
-			alert("Status:" + jqXHR.status + "\n" +jqXHR.statusText);
+			alert("Status:" + jqXHR.status + "\n" +"Message: " + jqXHR.statusText);
 		}
 	});
 }
@@ -76,7 +76,7 @@ function updateTodo(id){
 			
 		},
 		error : function(jqXHR){
-			alert("Status:" + jqXHR.status + "\n" +jqXHR.statusText);
+			alert("Status:" + jqXHR.status + "\n" +"Message: " + jqXHR.statusText);
 		}
 	}); 
 	
@@ -107,7 +107,7 @@ function addTodos(){
         	$("#dueDate").val("");
         },
         error:function(jqXHR) {
-            alert("Status:" + jqXHR.status + "\n" +jqXHR.statusText);
+            alert("Status:" + jqXHR.status + "\n" +"Message: " + jqXHR.statusText);
         }
     });
 }

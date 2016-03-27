@@ -27,7 +27,7 @@ public class TodoServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		gson = new GsonBuilder().setDateFormat("yyyy-mm-dd").create();
+		gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 		Todo todo = gson.fromJson(request.getReader(), Todo.class);
 		sendAsJson(todoApp.addTodo(todo), response);
 	}
@@ -39,10 +39,9 @@ public class TodoServlet extends HttpServlet {
 	}
 	
 	public void doDelete(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException{
+			throws ServletException, IOException {
 		int id = Integer.parseInt(request.getPathInfo().substring(1));
 		sendAsJson(todoApp.deleteTodo(id), response);
-		
 	}
 	
 	private void sendAsJson(Object object, HttpServletResponse response) 

@@ -4,15 +4,13 @@ import java.util.List;
 
 import com.todo.Status;
 import com.todo.Todo;
-import com.todo.store.InMemory;
+import com.todo.store.TodoDatabaseStore;
 import com.todo.store.TodoStore;
 
 public class TodoApp {
-	private TodoStore todoStore = new InMemory();
-	private int todoId = 0;
+	private TodoStore todoStore = new TodoDatabaseStore();
 	
 	public Todo addTodo(Todo todo) {
-		todo.setId(todoId++);
 		todo.setStatus(Status.PROGRESS);
 		return todoStore.create(todo);
 	}

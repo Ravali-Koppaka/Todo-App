@@ -10,10 +10,12 @@ public class Todo {
 	private Date dueDate;
 	private Status status;
 	
-	public Todo(String name, String description, Date dueDate){
+	public Todo(int id, String name, String description, Date dueDate, Status status){
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.dueDate = dueDate;
+		this.status = status;
 	}
 	
 	public int getId(){
